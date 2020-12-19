@@ -24,3 +24,6 @@ class My(Base):
     @property
     def password(self):
         return self.By_ID(element='cn.artstudent.app:id/pwd')
+
+    ##登录按钮
+    loginButton = Base().By_ID(element='cn.artstudent.app:id/loginBtn')

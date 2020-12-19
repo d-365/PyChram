@@ -10,10 +10,11 @@ from UI_Yss_App.Page.My_Button import My
 class Test_Login:
     ##初始化MY,我的页面元素对象
     page = My()
+    page.My_button.click()
+    page.head_photo.click()
 
     def test_case1(self):
-        self.page.My_button.click()
-        self.page.head_photo.click()
+        pass
 
 
 if __name__ == "__main__":
