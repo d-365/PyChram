@@ -7,6 +7,7 @@
 import requests
 
 class Base_requests:
+
     def Post(self,url=None,headers=None,data=None):
         response = requests.post(url,headers,data)
         return response.json()

@@ -5,16 +5,21 @@
 # @File : My_Button.py 
 
 from UI_Yss_App.Base.BasePage import Base
+from UI_Yss_App.Base.driver_Setting import desired_caps
+
 
 class My(Base):
+
+    page = Base(desired_caps)
+    # page.driver.reset()
     ##我的按钮
     @property
     def My_button(self):
         return self.By_ID(element='cn.artstudent.app:id/mebtn')
-    ##头像
+    ##头像(没有用户登录)
     @property
     def head_photo(self):
-        return self.By_ID(element='cn.artstudent.app:id/myProfileUnLoginLayout')
+        return self.By_Xpath(element='//*[@text="点击头像登录"]')
 
     ##登录账号
     @property
@@ -26,4 +31,6 @@ class My(Base):
         return self.By_ID(element='cn.artstudent.app:id/pwd')
 
     ##登录按钮
-    loginButton = Base().By_ID(element='cn.artstudent.app:id/loginBtn')
+    @property
+    def loginButton(self):
+        return self.By_ID(element='cn.artstudent.app:id/loginBtn')
