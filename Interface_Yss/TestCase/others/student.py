@@ -1,4 +1,4 @@
-from Interface_Yss.TestCase.manage import TestManage
+from Interface_Yss.TestCase.others.manage import TestManage
 import requests
 from Interface_Yss.Common.Random import random_str
 

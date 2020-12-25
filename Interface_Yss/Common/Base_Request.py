@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*- 
 # @Time : 2020/12/17 19:40 
 # @Author : dujun
-# @describe : describe
-# @File : Base_Request.py 
+# @describe : request 请求方法封装
+# @File : Base_Request.py
 
 import requests
 
 class Base_requests:
 
-    def Post(self,url=None,headers=None,data=None):
-        response = requests.post(url,headers,data)
-        return response.json()
-
+    def post(self, url=None, headers=None, data=None):
+        response = requests.post(url=url, headers=headers, data=data)
+        return response.json(), response.text, response.status_code

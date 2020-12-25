@@ -3,11 +3,10 @@
 # @Author : dujun
 # @describe : 视频录制类考试
 # @File : test_StuExam.py
+import unittest
 
 
-class TeststuExam:
+class Test_stuExam(unittest.TestCase):
     ##考生登录
     def test_stuLogin(self):
         pass
-
-
