@@ -11,5 +11,5 @@ desired_caps = {
     'appPackage': 'cn.artstudent.app',
     'appActivity': 'cn.artstudent.app.act.app.LaunchActivity',
     'noReset': 'True',
-    'automationName': 'UiAutomator2'
+    'automationName': 'UiAutomator2',
     }

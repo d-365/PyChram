@@ -20,10 +20,10 @@ login_url = "http://user.51bm.net.cn/login"
 Create_StuUrl = "http://user.51bm.net.cn/auth/admin/user/saveUser.htm"
 
 ##App考生登录接口
-stu_login = 'http://192.168.18.202:10100/login'
+stu_loginUrl = 'http://192.168.18.202:10100/login'
 
 ##考生账号
 stu_Base_data = {
-    "loginName": 'haitun13',
+    "loginName": 'HAITUN13',
     'password': 'Csk001'
 }
