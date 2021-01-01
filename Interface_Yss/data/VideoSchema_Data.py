@@ -6,7 +6,7 @@
 
 ##考生账号
 stu_Login_data = {
-    "loginName": 'HAITUN13',
+    "loginName": 'HAITUN66',
     'password': 'Csk001'
 }
 
@@ -16,7 +16,7 @@ queryData = {
     "p": {
         "riChengId": 11109768,
         "riChengID": 11109768,
-        "baoKaoId": 2628682,
+        "baoKaoId": 2634769,
         "simulation": 0
     }
 }
