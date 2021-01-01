@@ -3,7 +3,7 @@
 # @Author : dujun
 # @describe : AppiumBase页面
 # @File : BasePage.py
-
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 class Base:
@@ -19,6 +19,11 @@ class Base:
     def By_Xpath(self, element=None, OverText=None):
         return WebDriverWait(self.driver, 6, 0.5).until(lambda X: self.driver.find_element_by_xpath(element), OverText)
 
+    ##className定位
+    def by_class_name(self, element=None, OVerText=None):
+        return WebDriverWait(self.driver, 6, 0.5).until(lambda X: self.driver.find_element_by_class_name(element),
+                                                        OVerText)
+
     ##获取元素属性
     def get_attribute(self, method=None, ele=None):
         location = self.driver.find_element(method, ele, )
@@ -28,3 +33,10 @@ class Base:
     ##clear()清除文本框数值
     def Clear(self):
         pass
+
+    ## 定位并点击元素
+    def find_element_and_click(self, type, value):
+        if type == 'ID':
+            self.driver.find_element_by_id(value).click()
+        elif type == 'Xpath':
+            self.driver.find_element_by_xpath(value).click()

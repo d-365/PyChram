@@ -10,6 +10,8 @@ desired_caps = {
     'deviceName': '2b17bb80',
     'appPackage': 'cn.artstudent.app',
     'appActivity': 'cn.artstudent.app.act.app.LaunchActivity',
-    'noReset': 'True',
+    'noReset': 'False',
     'automationName': 'UiAutomator2',
+    'app': r"C:\Users\Administrator\Downloads\Yss.apk",
+    'autoGrantPermissions': 'True'
     }

@@ -12,6 +12,11 @@ class My(Base):
     def My_button(self):
         return self.By_ID(element='cn.artstudent.app:id/mebtn')
 
+    ## 关闭头像框提示：App生命周期只出现一次
+    @property
+    def close_MyNotice(self):
+        return self.By_ID('cn.artstudent.app:id/text')
+
     ##头像(没有用户登录)
     @property
     def head_photo(self):
