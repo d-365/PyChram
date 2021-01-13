@@ -10,6 +10,12 @@ manage_Account = {
     "password": "Test1234"
 }
 
+##院校账号
+yuanXiao = {
+    "loginName": "yuanxiao",
+    "password": "Test1234"
+}
+
 ##客服账号
 kefu_account = {
     "loginName": "kefu",

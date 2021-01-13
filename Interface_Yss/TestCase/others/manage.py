@@ -2,6 +2,7 @@ import requests
 import random
 import unittest
 
+
 ##管理员登录
 class TestManage(unittest.TestCase):
     ##登录接口
@@ -30,9 +31,9 @@ class TestManage(unittest.TestCase):
     ##创建考生
     def TestCreate_stu(self):
         self.list_data = []
-        for datas in range(1, 10):
+        for datas in range(2, 10):
             str_datas = str(datas)
-            username = "zhuzhu" + str_datas
+            username = "shengfen" + str_datas
             self.list_data.append(username)
 
         for list_ele in range(0, len(self.list_data)):
@@ -56,9 +57,7 @@ class TestManage(unittest.TestCase):
         return self.list_data
 
 
-# if __name__ == "__main__":
-#     unittest.main()
 run = TestManage()
 run.Testmanage_login()
 run.TestCreate_stu()
-print(run.list_data)
+print('生成的考生' + run.list_data)
