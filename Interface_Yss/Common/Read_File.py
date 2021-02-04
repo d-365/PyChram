@@ -25,9 +25,12 @@ def ReadTxt_Dict(path):
         data_line = file.readlines()
         datas = {}
         for line in data_line:
+            print('line', line)
             data = str(line).replace("\n", "")
-            newdata = data.split(':')
-            datas[newdata[0]] = newdata[1]
+            print('data', data)
+            newdata = data.split()
+            print('newdata', newdata)
+            datas[newdata[1]] = newdata[0]
         print(datas)
 
 
@@ -44,6 +47,6 @@ def read_excel(path):
 
 
 if __name__ == "__main__":
-    ## ReadTxt_Dict(r'D:\pythonProject\Interface_Yss\File\data.txt')
+    ReadTxt_Dict(r'C:\Users\Administrator\Desktop\new1.txt')
     # ReadTxt_List(r'D:\pythonProject\Interface_Yss\File\data.txt')
-    read_excel(r"C:\Users\Administrator\Downloads\考生打分项考官成绩导出.xlsx")
+    # read_excel(r"C:\Users\Administrator\Downloads\考生打分项考官成绩导出.xlsx")

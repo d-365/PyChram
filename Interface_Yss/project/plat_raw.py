@@ -23,6 +23,7 @@ class platRaw:
         else:
             response = self.re.post(url=url, data=data)
             self.ticket = response['ticket']
+        return response
 
     ##院校后台查询对应考试视频
     def schoolQueryVideo(self):
@@ -34,8 +35,14 @@ class platRaw:
         response = self.re.post(url=url, data=datas)
         return response
 
+    ##创建考生
+    def createStu(self, data=''):
+        url = self.cap['user'] + '/auth/admin/user/saveUser.htm'
+        response = self.re.post(url=url, data=data)
+        return response
+
 
 if __name__ == "__main__":
     run = platRaw()
     run.plat_login()
-    run.schoolQueryVideo()
+    run.createStu()

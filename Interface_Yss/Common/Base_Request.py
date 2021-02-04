@@ -17,9 +17,6 @@ class Base_requests:
                 return responses.json()
             else:
                 responses = requests.post(url=url, headers=headers, data=data)
-                responseCode = {
-                    "responseCode": response.status_code
-                }
                 return responses.json()
         except Exception as e:
             print(responses)

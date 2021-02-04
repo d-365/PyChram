@@ -5,5 +5,11 @@
 # @File : test_run.py
 import pytest
 
-if __name__ == "__main__":
-    pytest.main(['-s', r'D:\pythonProject\UI_Yss_App\TestCase\test_login.py'])
+
+class Test_run:
+    try:
+        ##App登录
+        pytest.main(['-s', r'UI_Yss_App\TestCase\test_LoginPyTest.py'])
+
+    except Exception:
+        pass

@@ -12,6 +12,6 @@ desired_caps = {
     'appActivity': 'cn.artstudent.app.act.app.LaunchActivity',
     'noReset': 'False',
     'automationName': 'UiAutomator2',
-    'app': r"C:\Users\Administrator\Downloads\Yss.apk",
+    # 'app': r"C:\Users\Administrator\Downloads\Yss.apk",
     'autoGrantPermissions': 'True'
     }

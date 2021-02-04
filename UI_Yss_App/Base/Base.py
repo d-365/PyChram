@@ -2,9 +2,9 @@
 # @Time : 2020/12/11 10:37 
 # @Author : dujun
 # @describe : AppiumBase页面
-# @File : BasePage.py
-from selenium.webdriver.common.by import By
+# @File : Base.py
 from selenium.webdriver.support.wait import WebDriverWait
+from UI_Yss_App.Common.pressKeyCode import pressKeyCode
 
 class Base:
     ##基础配置
@@ -40,3 +40,10 @@ class Base:
             self.driver.find_element_by_id(value).click()
         elif type == 'Xpath':
             self.driver.find_element_by_xpath(value).click()
+
+    ##Android,press_keyCode 模拟按键输入
+    def press_keyCode(self, *par):
+        press_key = pressKeyCode()
+        for i in range(0, len(par)):
+            ele = par[i]
+            self.driver.press_keycode(press_key[ele])

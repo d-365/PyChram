@@ -8,6 +8,7 @@ def Caps(env=''):
     ##测试环境
     if env == '':
         caps = {
+            "name": 'test',
             "audit": 'http://audit.51bm.net.cn',
             "user": 'http://user.51bm.net.cn',
             "prob": 'http://prob.51bm.net.cn',
@@ -35,7 +36,7 @@ def Caps(env=''):
             "examVideo": 'http://examvideo.51bm.net.cn',
             "sys": 'http://sys.51bm.net.cn',
             "examlog": 'http://examlog.51bm.net.cn',
-            "name": 'test'
+            '23000': 'http://192.168.18.202:23000'
         }
         return caps
     ##线上环境

@@ -31,7 +31,7 @@ class stu_project:
 
     ##进入录制，保存考生考试状态（saveStudentExamStatus）
     def saveStudentExamStatus(self, data):
-        url = self.cap['stu'] + '/api/m/auth/student/log/saveStudentExamStatus.htm'
+        url = self.cap['stu'] + '/api/m/auth/student/AppRunLog/saveStudentExamStatus.htm'
         response = self.re.post(url=url, data=data)
         return response
 
@@ -56,5 +56,29 @@ class stu_project:
     ##考生提交考试视频
     def commitVideo(self, data):
         url = self.cap['stu'] + '/api/m/auth/video/commitVideo.ws'
+        response = self.re.post(url=url, data=data)
+        return response
+
+    ##报名,选择日程
+    def save_prof(self, data=''):
+        url = self.cap['stu'] + "/api/m/auth/apply/save_prof.htm"
+        response = self.re.post(url=url, data=data)
+        return response
+
+    ##查询考试列表(baoKaoId)
+    def query_exam_prof(self, data=''):
+        url = self.cap['stu'] + "/api/m/auth/apply/query_exam_prof.htm"
+        response = self.re.post(url=url, data=data)
+        return response
+
+    ##创建报考订单
+    def add_prof_order(self, data=''):
+        url = self.cap['stu'] + '/api/m/auth/apply/add_prof_order.htm'
+        response = self.re.post(url=url, data=data)
+        return response
+
+    ##在线确认
+    def commit_online_confirm(self, data=''):
+        url = self.cap['print'] + '/api/m/auth/apply/commit_online_confirm.htm'
         response = self.re.post(url=url, data=data)
         return response

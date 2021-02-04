@@ -3,7 +3,7 @@
 # @Author : dujun
 # @describe : 我的页面
 # @File : My_Button.py
-from UI_Yss_App.Base.BasePage import Base
+from UI_Yss_App.Base.Base import Base
 
 class My(Base):
 
