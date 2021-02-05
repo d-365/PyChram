@@ -9,7 +9,10 @@ import pytest
 class Test_run:
     try:
         ##App登录
-        pytest.main(['-s', r'UI_Yss_App\TestCase\test_LoginPyTest.py'])
-
+        pytest.main(['-s', r'TestCase\test_LoginPyTest.py'])
     except Exception:
         pass
+
+
+if __name__ == "__main__":
+    run = Test_run()

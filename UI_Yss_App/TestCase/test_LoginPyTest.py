@@ -14,7 +14,9 @@ from UI_Yss_App.Config.logger import log
 def setup_module():
     global startTime
     global logger
+    # 实例化logger对象
     logger = log()
+    logger.adbLogCat()
     startTime = datetime.datetime.now()
     print('登录用例执行开始时间', startTime)
 
@@ -22,6 +24,7 @@ def setup_module():
 def teardown_module():
     endTime = datetime.datetime.now()
     print('用例耗时', endTime - startTime)
+    logger.kill_adbServer()
 
 
 class Test_Login:
@@ -43,11 +46,9 @@ class Test_Login:
             message = '//*[@text=\'{}\']'.format(errorMessage)
             toast = page.By_Xpath(message)
             assert toast.text == errorMessage
-            ##print("test_case1,用户名输入不正确,执行成功")
-            logger.debug("test_case1,用户名输入不正确,执行成功")
+            logger.info("test_case1,用户名输入不正确,执行成功")
         except AssertionError:
-            ##print('case1断言失败')
-            logger.info("case1断言失败")
+            logger.error('case1执行失败')
 
     ##密码输入长度不正确（toast）
     def test_case2(self, page):
@@ -65,9 +66,9 @@ class Test_Login:
             message = '//*[@text=\'{}\']'.format(errorMessage)
             toast = page.By_Xpath(message)
             assert toast.text == errorMessage
-            print("test_case2,密码输入长度不正确,执行完毕")
+            logger.info("test_case2,密码输入长度不正确,执行完毕")
         except AssertionError:
-            print('case2断言失败,toast未定位到')
+            logger.error('case2执行失败')
 
     ##登录名或密码不正确（弹窗）
     def test_case3(self, page):
@@ -82,9 +83,9 @@ class Test_Login:
             alter_message = page.By_ID('cn.artstudent.app:id/message')
             alter_button = page.By_ID('cn.artstudent.app:id/positiveButton')
             alter_button.click()
-            print('test_case3', alter_message.text, '执行成功')
+            logger.info('test_case3,执行成功')
         except Exception:
-            print('case3执行失败')
+            logger.error('case3执行失败')
 
     ##正确的用户名密码,完成登录
     def test_case4(self, page):
@@ -100,12 +101,12 @@ class Test_Login:
             ##alter处理
             alter_button = page.By_ID('cn.artstudent.app:id/closeDialog')
             alter_button.click()
-            print('test_case4', '登录成功')
+            logger.info('test_case4,登录成功')
         except Exception:
-            print("case4执行失败", 'alterbutton点击失败')
+            logger.error('case4执行失败')
 
     ##用例执行后,关闭driver
-    @pytest.mark.skipif(1 == 1, reason="用例执行完,不关闭driver")
+    @pytest.mark.skipif(1 == 1, reason="用例执行完,关闭driver")
     def test_down(self, page):
         time.sleep(3)
         page.driver.quit()

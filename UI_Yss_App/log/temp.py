@@ -9,7 +9,7 @@ import logging
 
 if __name__ == "__main__":
     ##实例化logger对象
-    logger = logging.getLogger()
+    logger = logging.getLogger('father_logger')
     logger.setLevel(logging.INFO)
 
     ##创建handle_file
@@ -30,7 +30,3 @@ if __name__ == "__main__":
     ##将logger添加到handler里面
     logger.addHandler(handle_stream)
     logger.addHandler(handle_file)
-
-    logger.debug('This is debug message')
-    logger.info('This is info message')
-    logger.warning('This is warning message')
