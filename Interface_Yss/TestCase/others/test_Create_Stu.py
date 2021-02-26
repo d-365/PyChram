@@ -137,4 +137,4 @@ class Test_CreateStu:
 
 
 if __name__ == "__main__":
-    pytest.main("-v -s test_Create_Stu.py::test_uploadStuPhoto")
+    pytest.main()

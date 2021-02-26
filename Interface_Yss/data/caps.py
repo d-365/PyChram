@@ -39,9 +39,11 @@ def Caps(env=''):
             '23000': 'http://192.168.18.202:23000'
         }
         return caps
+
     ##线上环境
     elif env == 'online':
         caps = {
+            'college': 'https://college.artstudent.cn',
             "analysis": 'http://192.168.18.202:7000',
             "index": 'http://192.168.18.202:10000',
             "user": 'http://192.168.18.202:10100',
@@ -65,11 +67,11 @@ def Caps(env=''):
             "pool": 'http://192.168.18.202:20500',
             "stu": 'http://192.168.18.202:20600',
             "print": 'http://192.168.18.202:20700',
-            "school": 'http://192.168.18.202:20800',
+            "school": 'https://school.artstudent.cn',
             "menu": 'http://192.168.18.202:20900',
             "guide": 'http://192.168.18.202:22000',
             "audit": 'http://192.168.18.202:23000',
-            "examvideo": 'http://192.168.18.202:24000',
+            "examVideo": 'https://examvideo.artstudent.cn',
             "course": 'http://192.168.18.202:25000',
             "live": 'http://192.168.18.202:26000',
             "eval": 'http://192.168.18.202:27000',

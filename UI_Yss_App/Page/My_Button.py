@@ -5,7 +5,11 @@
 # @File : My_Button.py
 from UI_Yss_App.Base.Base import Base
 
-class My(Base):
+
+class myPage(Base):
+
+    def __init__(self, driver):
+        self.driver = driver
 
     ##我的按钮
     @property
@@ -36,3 +40,18 @@ class My(Base):
     @property
     def loginButton(self):
         return self.By_ID(element='cn.artstudent.app:id/loginBtn')
+
+    ##若重置App,需要调用此方法进行前置动作
+    def startApp(self):
+        ##初始化App，点击我知道了, 'noReset'为 True 时忽略
+        try:
+            Know = self.By_ID('cn.artstudent.app:id/btn')
+            Know.click()
+            ##点击我的按钮
+            self.My_button.click()
+            ## 关闭头像框提示：App生命周期只出现一次
+            self.close_MyNotice.click()
+            ##点击头像
+            self.head_photo.click()
+        except Exception:
+            pass

@@ -49,7 +49,7 @@ def stuData():
     stuName = []
     for i in range(0, 1):
         strInt = str(i)
-        name = 'xuncha' + strInt
+        name = 'xiaoxian' + strInt
         stuName.append(name)
     print("待处理考生数据：", stuName)
     return stuName

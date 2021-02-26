@@ -5,10 +5,16 @@
 # @File : logger.py
 import logging
 import logging.handlers
-import time, os
+import os
 import subprocess
-import psutil
+import time
 
+
+# class Singleton(object):
+#     def __new__(cls,*args,**kwargs):
+#         if not hasattr(cls,'_inst'):
+#             cls._inst=super(Singleton,cls).__new__(cls,*args,**kwargs)
+#         return cls._inst
 
 class log(object):
     def __init__(self, level='info'):
