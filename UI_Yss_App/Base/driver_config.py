@@ -23,7 +23,7 @@ desired_caps = {
     'appPackage': 'cn.artstudent.app',
     'appActivity': 'cn.artstudent.app.act.app.LaunchActivity',
     ##启动前是否重置App,False,True
-    'noReset': "True",
+    'noReset': True,
     ##自动化引擎
     'automationName': 'UiAutomator2',
     'newCommandTimeout': 120

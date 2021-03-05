@@ -8,24 +8,26 @@ from Interface_Yss.data.caps import Caps
 
 
 class userProject:
-    re = Base_requests()
-    cap = Caps()
+
+    def __init__(self, environment):
+        self.re = Base_requests()
+        self.caps = Caps(env=environment)
 
     ##登录接口App登录
     def stuLogin(self, data=''):
-        url = self.cap['user'] + "/login"
+        url = self.caps['user'] + "/login"
         response = self.re.post(url=url, data=data)
         return response
 
     ##提交考生个人信息
     def save_stuinfo(self, data=''):
-        url = self.cap['user'] + '/api/m/auth/user/save_stuinfo.htm'
+        url = self.caps['user'] + '/api/m/auth/user/save_stuinfo.htm'
         response = self.re.post(url=url, data=data)
         return response
 
     ##上传报考资料
     def uploadStuPhoto(self, data=''):
-        url = self.cap['23000'] + "/api/m/auth/service/v191119/upload_auth_res.ws"
+        url = self.caps['23000'] + "/api/m/auth/service/v191119/upload_auth_res.ws"
         headers = {
             "platformType": "2",
             "udid": "1519fbbacd907027e734fbf8b17b2a7a",
@@ -37,6 +39,6 @@ class userProject:
 
     ##提交报考资料
     def submitStuInfo(self, data=''):
-        url = self.cap['23000'] + "/api/m/auth/service/v191119/commit_auth_res.ws"
+        url = self.caps['23000'] + "/api/m/auth/service/v191119/commit_auth_res.ws"
         response = self.re.post(url=url, data=data)
         return response
