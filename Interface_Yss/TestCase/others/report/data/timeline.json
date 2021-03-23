@@ -1,0 +1,31 @@
+{
+  "uid": "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name": "timeline",
+  "children": [
+    {
+      "name": "PC-HaiTun",
+      "children": [
+        {
+          "name": "14000-MainThread",
+          "children": [
+            {
+              "name": "test_stuApply",
+              "uid": "6f5f3cf2fb994ef6",
+              "parentUid": "54236f9e7d0419c1a70ab2a6a665a669",
+              "status": "passed",
+              "time": {
+                "start": 1611584744619,
+                "stop": 1611584744907,
+                "duration": 288
+              },
+              "flaky": false,
+              "parameters": []
+            }
+          ],
+          "uid": "54236f9e7d0419c1a70ab2a6a665a669"
+        }
+      ],
+      "uid": "7e9b31667ff6726537b172e505ff61e3"
+    }
+  ]
+}

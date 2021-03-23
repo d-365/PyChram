@@ -1,0 +1,31 @@
+{
+  "uid": "98d3104e051c652961429bf95fa0b5d6",
+  "name": "suites",
+  "children": [
+    {
+      "name": "test_apply",
+      "children": [
+        {
+          "name": "TestApply",
+          "children": [
+            {
+              "name": "test_stuApply",
+              "uid": "6f5f3cf2fb994ef6",
+              "parentUid": "607606b9008cbcee44850a396abcd58b",
+              "status": "passed",
+              "time": {
+                "start": 1611584744619,
+                "stop": 1611584744907,
+                "duration": 288
+              },
+              "flaky": false,
+              "parameters": []
+            }
+          ],
+          "uid": "607606b9008cbcee44850a396abcd58b"
+        }
+      ],
+      "uid": "8885285bc07b0e0b14fbd33dac98d6f3"
+    }
+  ]
+}

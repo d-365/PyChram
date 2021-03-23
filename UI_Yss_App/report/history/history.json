@@ -1,0 +1,237 @@
+{
+  "f0c81a0228ce0ea604621c774c9aa5e6": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 1,
+      "unknown": 0,
+      "total": 1
+    },
+    "items": [
+      {
+        "uid": "a9a403d74512da93",
+        "status": "passed",
+        "time": {
+          "start": 1616468227339,
+          "stop": 1616468261313,
+          "duration": 33974
+        }
+      }
+    ]
+  },
+  "8250a9343afb6385873843597df1a0f2": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 1,
+      "unknown": 0,
+      "total": 1
+    },
+    "items": [
+      {
+        "uid": "730852d03b9e4e0f",
+        "status": "passed",
+        "time": {
+          "start": 1616468298631,
+          "stop": 1616468325081,
+          "duration": 26450
+        }
+      }
+    ]
+  },
+  "cf43268fb728f06b3534c87f7e853fa7": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 1,
+      "unknown": 0,
+      "total": 1
+    },
+    "items": [
+      {
+        "uid": "753bb2887085a0be",
+        "status": "passed",
+        "time": {
+          "start": 1616468325086,
+          "stop": 1616468339991,
+          "duration": 14905
+        }
+      }
+    ]
+  },
+  "12976fe1bba3b688355bb5695306034a": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 1,
+      "unknown": 0,
+      "total": 1
+    },
+    "items": [
+      {
+        "uid": "1f96e91058b2ad7a",
+        "status": "passed",
+        "time": {
+          "start": 1616468208285,
+          "stop": 1616468227335,
+          "duration": 19050
+        }
+      }
+    ]
+  },
+  "534e00f2d0354d31e15a9b2f6541fdb7": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 1,
+      "passed": 0,
+      "unknown": 0,
+      "total": 1
+    },
+    "items": [
+      {
+        "uid": "c60e70441aeecf45",
+        "status": "skipped",
+        "statusDetails": "Skipped: noReset为True,无需执行登录用例",
+        "time": {
+          "start": 1616468197576,
+          "stop": 1616468197576,
+          "duration": 0
+        }
+      }
+    ]
+  },
+  "f903e983d67cdb5ae2f2b54a59f63d83": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 1,
+      "unknown": 0,
+      "total": 1
+    },
+    "items": [
+      {
+        "uid": "4826bd3bc68c1750",
+        "status": "passed",
+        "time": {
+          "start": 1616468261321,
+          "stop": 1616468295942,
+          "duration": 34621
+        }
+      }
+    ]
+  },
+  "bf0a61706d489617ffd5233d752e0ef7": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 1,
+      "unknown": 0,
+      "total": 1
+    },
+    "items": [
+      {
+        "uid": "2e2858f9e25b755",
+        "status": "passed",
+        "time": {
+          "start": 1616468339994,
+          "stop": 1616468369525,
+          "duration": 29531
+        }
+      }
+    ]
+  },
+  "48aeae60759de37155f2cf5fb19dd32e": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 1,
+      "passed": 0,
+      "unknown": 0,
+      "total": 1
+    },
+    "items": [
+      {
+        "uid": "f043cc998837cc65",
+        "status": "skipped",
+        "statusDetails": "Skipped: noReset为True,无需执行登录用例",
+        "time": {
+          "start": 1616468197566,
+          "stop": 1616468197566,
+          "duration": 0
+        }
+      }
+    ]
+  },
+  "8d5e86e61e63748a557a503bcc810f2f": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 1,
+      "passed": 0,
+      "unknown": 0,
+      "total": 1
+    },
+    "items": [
+      {
+        "uid": "5560f40ef6855bee",
+        "status": "skipped",
+        "statusDetails": "Skipped: noReset为True,无需执行登录用例",
+        "time": {
+          "start": 1616468197570,
+          "stop": 1616468197570,
+          "duration": 0
+        }
+      }
+    ]
+  },
+  "608a1d7981793716ca4fe6a2c821b43a": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 1,
+      "passed": 0,
+      "unknown": 0,
+      "total": 1
+    },
+    "items": [
+      {
+        "uid": "f413d663ea8f8e3d",
+        "status": "skipped",
+        "statusDetails": "Skipped: noReset为True,无需执行登录用例",
+        "time": {
+          "start": 1616468197573,
+          "stop": 1616468197573,
+          "duration": 0
+        }
+      }
+    ]
+  },
+  "125274d22497ea06a281c3b721b72d4d": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 1,
+      "unknown": 0,
+      "total": 1
+    },
+    "items": [
+      {
+        "uid": "9ff537176d336874",
+        "status": "passed",
+        "time": {
+          "start": 1616468295945,
+          "stop": 1616468298624,
+          "duration": 2679
+        }
+      }
+    ]
+  }
+}

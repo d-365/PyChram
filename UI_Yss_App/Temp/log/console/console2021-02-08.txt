@@ -1,0 +1,2 @@
+2021-02-08 15:07:33,898 - logger.py[line:61] - INFO: TestCase2-------------,testcase1
+2021-02-08 15:07:33,901 - logger.py[line:61] - INFO: TestCase2--------------,testcase2

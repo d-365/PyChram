@@ -1,0 +1,42 @@
+2021-02-26 11:24:59,110 - remote_connection.py[line:116] - INFO: Could not connect to port 4723 on host 127.0.0.1
+2021-02-26 11:24:59,111 - remote_connection.py[line:135] - INFO: Could not get IP address for host: 127.0.0.1
+2021-02-26 11:25:01,119 - connectionpool.py[line:751] - WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D27317E970>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /wd/hub/session
+2021-02-26 11:25:03,125 - connectionpool.py[line:751] - WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D2731DDDC0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /wd/hub/session
+2021-02-26 11:25:05,132 - connectionpool.py[line:751] - WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D2731DD1F0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /wd/hub/session
+2021-02-26 11:25:52,073 - remote_connection.py[line:116] - INFO: Could not connect to port 4723 on host 127.0.0.1
+2021-02-26 11:25:52,073 - remote_connection.py[line:135] - INFO: Could not get IP address for host: 127.0.0.1
+2021-02-26 11:25:54,077 - connectionpool.py[line:751] - WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B2E1F8B970>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /wd/hub/session
+2021-02-26 11:25:56,080 - connectionpool.py[line:751] - WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B2E1F8B040>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /wd/hub/session
+2021-02-26 11:25:58,084 - connectionpool.py[line:751] - WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B2E1F8B1C0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /wd/hub/session
+2021-02-26 11:28:29,730 - logger.py[line:67] - INFO: 上传case1执行成功,未拍照，未选视频进行提交
+2021-02-26 11:28:29,730 - logger.py[line:67] - INFO: 上传case1执行成功,未拍照，未选视频进行提交
+2021-02-26 11:28:46,208 - logger.py[line:67] - INFO: 上传case2执行成功，仅拍照片进行提交
+2021-02-26 11:28:46,208 - logger.py[line:67] - INFO: 上传case2执行成功，仅拍照片进行提交
+2021-02-26 11:29:00,454 - logger.py[line:67] - INFO: 上传case3执行成功，仅选中视频进行提交
+2021-02-26 11:29:00,454 - logger.py[line:67] - INFO: 上传case3执行成功，仅选中视频进行提交
+2021-02-26 11:29:21,230 - logger.py[line:67] - INFO: 视频提交成功
+2021-02-26 11:29:21,230 - logger.py[line:67] - INFO: 视频提交成功
+2021-02-26 15:40:46,007 - logger.py[line:67] - INFO: 上传case1执行成功,未拍照，未选视频进行提交
+2021-02-26 15:40:46,007 - logger.py[line:67] - INFO: 上传case1执行成功,未拍照，未选视频进行提交
+2021-02-26 15:41:03,721 - logger.py[line:67] - INFO: 上传case2执行成功，仅拍照片进行提交
+2021-02-26 15:41:03,721 - logger.py[line:67] - INFO: 上传case2执行成功，仅拍照片进行提交
+2021-02-26 15:41:18,820 - logger.py[line:67] - INFO: 上传case3执行成功，仅选中视频进行提交
+2021-02-26 15:41:18,820 - logger.py[line:67] - INFO: 上传case3执行成功，仅选中视频进行提交
+2021-02-26 15:41:40,068 - logger.py[line:67] - INFO: 视频提交成功
+2021-02-26 15:41:40,068 - logger.py[line:67] - INFO: 视频提交成功
+2021-02-26 17:15:32,309 - logger.py[line:67] - INFO: 上传case1执行成功,未拍照，未选视频进行提交
+2021-02-26 17:15:32,309 - logger.py[line:67] - INFO: 上传case1执行成功,未拍照，未选视频进行提交
+2021-02-26 17:15:51,504 - logger.py[line:67] - INFO: 上传case2执行成功，仅拍照片进行提交
+2021-02-26 17:15:51,504 - logger.py[line:67] - INFO: 上传case2执行成功，仅拍照片进行提交
+2021-02-26 17:16:05,968 - logger.py[line:67] - INFO: 上传case3执行成功，仅选中视频进行提交
+2021-02-26 17:16:05,968 - logger.py[line:67] - INFO: 上传case3执行成功，仅选中视频进行提交
+2021-02-26 17:16:28,896 - logger.py[line:67] - INFO: 视频提交成功
+2021-02-26 17:16:28,896 - logger.py[line:67] - INFO: 视频提交成功
+2021-02-26 17:29:50,995 - logger.py[line:67] - INFO: 上传case1执行成功,未拍照，未选视频进行提交
+2021-02-26 17:29:50,995 - logger.py[line:67] - INFO: 上传case1执行成功,未拍照，未选视频进行提交
+2021-02-26 17:30:09,665 - logger.py[line:67] - INFO: 上传case2执行成功，仅拍照片进行提交
+2021-02-26 17:30:09,665 - logger.py[line:67] - INFO: 上传case2执行成功，仅拍照片进行提交
+2021-02-26 17:30:24,600 - logger.py[line:67] - INFO: 上传case3执行成功，仅选中视频进行提交
+2021-02-26 17:30:24,600 - logger.py[line:67] - INFO: 上传case3执行成功，仅选中视频进行提交
+2021-02-26 17:30:47,762 - logger.py[line:67] - INFO: 视频提交成功
+2021-02-26 17:30:47,762 - logger.py[line:67] - INFO: 视频提交成功

@@ -13,12 +13,12 @@ class createExcel:
 
     @staticmethod
     def createExcel():
+
         # 文件地址
         savePath = r'C:\Users\Administrator\Downloads\test.xlsx'
         file = xlwt.Workbook(encoding='utf-8')
         file.add_sheet('sheetName', cell_overwrite_ok=True)
         file.save(savePath)
-
     @staticmethod
     def photoUpdate():
         ##文件地址

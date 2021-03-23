@@ -1,0 +1,31 @@
+{
+  "uid": "b1a8273437954620fa374b796ffaacdd",
+  "name": "behaviors",
+  "children": [
+    {
+      "name": "考生报考",
+      "children": [
+        {
+          "name": "考生端操作",
+          "children": [
+            {
+              "name": "test_stuApply",
+              "uid": "6f5f3cf2fb994ef6",
+              "parentUid": "4766ba35dbb4ee4c9828d6d55d49c8bb",
+              "status": "passed",
+              "time": {
+                "start": 1611584744619,
+                "stop": 1611584744907,
+                "duration": 288
+              },
+              "flaky": false,
+              "parameters": []
+            }
+          ],
+          "uid": "4766ba35dbb4ee4c9828d6d55d49c8bb"
+        }
+      ],
+      "uid": "d89a4c173174ff8472eab6c5611c4237"
+    }
+  ]
+}

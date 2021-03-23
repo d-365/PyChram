@@ -1,0 +1,17 @@
+[
+  {
+    "buildOrder": 28,
+    "reportUrl": "http://localhost:8080/jenkins/job/reportTest/28/allure",
+    "reportName": "AllureReport",
+    "data": {}
+  },
+  {
+    "buildOrder": 27,
+    "reportUrl": "http://localhost:8080/jenkins/job/reportTest/27/allure",
+    "reportName": "AllureReport",
+    "data": {}
+  },
+  {
+    "data": {}
+  }
+]

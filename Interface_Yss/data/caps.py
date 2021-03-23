@@ -36,7 +36,8 @@ def Caps(env=''):
             "examVideo": 'http://examvideo.51bm.net.cn',
             "sys": 'http://sys.51bm.net.cn',
             "examlog": 'http://examlog.51bm.net.cn',
-            '23000': 'http://192.168.18.202:23000'
+            '23000': 'http://192.168.18.202:23000',
+            '18000': 'http://192.168.18.202:18000/'
         }
         return caps
 

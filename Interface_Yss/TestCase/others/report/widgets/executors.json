@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Jenkins",
+    "type": "jenkins",
+    "url": "http://localhost:8080/jenkins/",
+    "buildOrder": 28,
+    "buildName": "test_apply.py #28",
+    "buildUrl": "http://localhost:8080/jenkins/job/reportTest/28/",
+    "reportName": "AllureReport",
+    "reportUrl": "http://localhost:8080/jenkins/job/reportTest/28/allure"
+  }
+]

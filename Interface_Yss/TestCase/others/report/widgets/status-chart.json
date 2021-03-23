@@ -1,0 +1,13 @@
+[
+  {
+    "uid": "6f5f3cf2fb994ef6",
+    "name": "test_stuApply",
+    "time": {
+      "start": 1611584744619,
+      "stop": 1611584744907,
+      "duration": 288
+    },
+    "status": "passed",
+    "severity": "normal"
+  }
+]

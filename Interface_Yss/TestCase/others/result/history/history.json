@@ -1,0 +1,24 @@
+{
+  "c29c85d5e5bb093b5eda63c64ece7de3": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 1,
+      "unknown": 0,
+      "total": 1
+    },
+    "items": [
+      {
+        "uid": "f86fd77f7942828b",
+        "reportUrl": "http://localhost:8080/jenkins/job/reportTest/27/allure/#testresult/f86fd77f7942828b",
+        "status": "passed",
+        "time": {
+          "start": 1611584621041,
+          "stop": 1611584621269,
+          "duration": 228
+        }
+      }
+    ]
+  }
+}

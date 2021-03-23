@@ -1,0 +1,17 @@
+{
+  "total": 1,
+  "items": [
+    {
+      "uid": "8885285bc07b0e0b14fbd33dac98d6f3",
+      "name": "test_apply",
+      "statistic": {
+        "failed": 0,
+        "broken": 0,
+        "skipped": 0,
+        "passed": 1,
+        "unknown": 0,
+        "total": 1
+      }
+    }
+  ]
+}

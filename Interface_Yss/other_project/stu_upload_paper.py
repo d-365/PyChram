@@ -42,10 +42,9 @@ class TeststuUpload_paper:
             "loginName": "haitun60",
             "password": "Csk001"
         }
-        for i in range(0, 10):
-            stuLogin = user.stuLogin(login_data)
-            stuTicket = stuLogin['ticket']
-
+        stuLogin = user.stuLogin(login_data)
+        stuTicket = stuLogin['ticket']
+        for i in range(0, 2):
             ##考生上传评画作品
             evalData = {
                 "data": str({"m": "",
@@ -53,7 +52,9 @@ class TeststuUpload_paper:
                                    "teacherName": "天美云豹老师", "classId": 1, "className": "美术类", "profId": 1,
                                    "profName": "素描",
                                    "paintUrl": "http://img.artstudent.cn/pr/2021-03-04/cfda71b9fc074d00944d2599416052e9.jpg",
-                                   "stuGrade": "其他", "describe": "专业评测"}}),
+                                   "stuGrade": "其他",
+                                   "describe": "专业评测,考生账号%s" % login_data['loginName']
+                                   }}),
                 'ticket': stuTicket
             }
             eval = evaluation.save_stu_evaluation(evalData)

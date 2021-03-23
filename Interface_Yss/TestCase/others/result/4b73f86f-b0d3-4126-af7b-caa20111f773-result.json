@@ -1,0 +1,48 @@
+{
+  "name": "test_stuApply",
+  "status": "passed",
+  "start": 1611584744619,
+  "stop": 1611584744907,
+  "uuid": "4394a45f-1509-4545-8ed9-a28405a5ee5a",
+  "historyId": "c29c85d5e5bb093b5eda63c64ece7de3",
+  "testCaseId": "cc3c6e2553afa848e7c61a79f25c8a53",
+  "fullName": "test_apply.TestApply#test_stuApply",
+  "labels": [
+    {
+      "name": "story",
+      "value": "考生端操作"
+    },
+    {
+      "name": "feature",
+      "value": "考生报考"
+    },
+    {
+      "name": "suite",
+      "value": "test_apply"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestApply"
+    },
+    {
+      "name": "host",
+      "value": "PC-HaiTun"
+    },
+    {
+      "name": "thread",
+      "value": "14000-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test_apply"
+    }
+  ]
+}

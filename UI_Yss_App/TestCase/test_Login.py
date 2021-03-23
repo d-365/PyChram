@@ -3,13 +3,14 @@
 # @Author : dujun
 # @describe : App登录页面
 # @File : test_login.py
+
 import pytest
 from UI_Yss_App.Common.pressKeyCode import pressKeyCode
 import datetime
 from UI_Yss_App.Base.driver_config import desired_caps
 
 
-@pytest.mark.skipif(desired_caps['noReset'] == "True", reason='noReset为True,无需执行登录用例')
+@pytest.mark.skipif(desired_caps['noReset'] == True, reason='noReset为True,无需执行登录用例')
 class Test_Login:
 
     def setup_class(self):
