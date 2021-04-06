@@ -7,6 +7,7 @@
 from Interface_Yss.data import CommonData
 import requests
 
+
 class Base_requests:
 
     ##封装基本request中post方法

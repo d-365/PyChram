@@ -29,27 +29,15 @@ class Base(object):
         return WebDriverWait(self.driver, 6, 0.5).until(lambda X: self.driver.find_element_by_class_name(element),
                                                         OVerText)
 
-    ##clear()清除文本框数值
-    def clear(self):
-        pass
-
-    ## 定位并点击元素
-    def find_element_and_click(self, type, value):
-        if type == 'ID':
-            self.driver.find_element_by_id(value).click()
-        elif type == 'Xpath':
-            self.driver.find_element_by_xpath(value).click()
-
-    ##Android,press_keyCode 模拟按键输入
+    # Android,press_keyCode 模拟按键输入
     def press_keyCode(self, *par):
         press_key = pressKeyCode()
         for i in range(0, len(par)):
             ele = par[i]
             self.driver.press_keycode(press_key[ele])
 
-    ##向左滑动
+    # 向左滑动
     def swipe_left(self, start_x=0.9, end_x=0.1):
-
         x = self.driver.get_window_size()['width']
         y = self.driver.get_window_size()['height']
 
@@ -81,7 +69,7 @@ class Base(object):
         time.sleep(2)
         self.driver.swipe(x1, y1, x2, y2, duration=1000)
 
-    ##向上滑动
+    # 向上滑动
     def swipe_up(self, start_y=0.9, end_y=0.1):
         x = self.driver.get_window_size()['width']
         y = self.driver.get_window_size()['height']
@@ -92,14 +80,62 @@ class Base(object):
         time.sleep(2)
         self.driver.swipe(x1, y1, x2, y2, duration=1000)
 
-    ##App截图
+    # App截图
     def screenCap(self, screenCapName):
         os.popen(r'adb shell screencap -p /sdcard/%s.png' % screenCapName)
         os.popen(r'adb pull /sdcard/%s.png D:\pythonProject\UI_Yss_App\screenCap' % screenCapName)
 
-    ##捕获toast提示
+    # 捕获toast提示
     def catch_toast(self, rawMessage, OverText=None):
-        messages = '//*[@text=\'{}\']'.format(rawMessage)
-        toastWebDriver = WebDriverWait(self.driver, 10, 0.5).until(
+        # messages = '//*[@text=\'{}\']'.format(rawMessage)
+        messages = "//*[contains(@text,{}) ]".format(rawMessage)
+        toastWebDriver = WebDriverWait(self.driver, 5, 0.5).until(
             lambda X: self.driver.find_element_by_xpath(messages), OverText)
-        return toastWebDriver
+        return toastWebDriver.text
+
+    # 捕获toast提示
+    def catchToast_full(self, rawMessage, OverText=None):
+        messages = "//*[@text = {}]".format(rawMessage)
+        toastWebDriver = WebDriverWait(self.driver, 5, 0.5).until(
+            lambda X: self.driver.find_element_by_xpath(messages), OverText)
+        return toastWebDriver.text
+
+    # 获取屏幕尺寸
+    def get_screenSize(self):
+        w = self.driver.get_window_size()['width']
+        h = self.driver.get_window_size()['height']
+        return w, h
+
+    # 坐标定位(相对定位)
+    def tap_relative(self, point_x, point_y):
+        w = self.driver.get_window_size()['width']
+        h = self.driver.get_window_size()['height']
+        # 比例系数
+        ratio_x = point_x / w
+        ratio_y = point_y / h
+        self.driver.tap([(ratio_x * w, ratio_y * h)])
+
+    # 切换上下文至H5
+    def switch_h5(self, contexts):
+        self.driver.switch_to.context(contexts)
+
+    # 切换上下文至native
+    def switch_native(self, contexts):
+        self.driver.switch_to.context(contexts)
+
+    # assertIN 包含
+    def assertIn(self, short, long):
+        """
+        :param short:
+        :param long:
+        """
+        if short in long:
+            pass
+        else:
+            raise Exception(print(long, '中不包含', short))
+
+    # Android 退格键
+    def androidKey_Del(self, num):
+        press_key = pressKeyCode()
+        for i in range(0, num):
+            self.driver.press_keycode(press_key['KEYCODE_DEL'])

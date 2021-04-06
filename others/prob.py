@@ -12,11 +12,11 @@ import math
 class prob:
 
     def __init__(self):
-        environment_current = ''
+        environment_current = 'online'
         # 考生登录
         payload = {
-            'loginName': 'haitun10',
-            'password': 'Csk001'
+            'loginName': 'haitun2',
+            'password': 'Test1234'
         }
         user = userProject(environment=environment_current)
         reStu = user.stuLogin(data=payload)

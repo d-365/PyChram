@@ -27,12 +27,12 @@ class TeststuUpload_paper:
         return pays
 
     def test_run(self, evaluation, user, pay):
-        ##yunbao1
+        # yunbao1
         yunbao1 = {
             "teacherId": 2,
             "teacherUserId": 1077111
         }
-        ##yunbao2
+        # yunbao2
         yunbao2 = {
             "teacherId": 12,
             "teacherUserId": 1077112

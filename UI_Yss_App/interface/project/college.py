@@ -3,10 +3,9 @@
 # @Author : dujun
 # @describe : describe
 # @File : college.py
-
-from Interface_Yss.data import Account
-from Interface_Yss.Common.Base_Request import Base_requests
-from Interface_Yss.data.caps import Caps
+from UI_Yss_App.interface.Common.Base_Request import Base_requests
+from UI_Yss_App.interface.data import Account
+from UI_Yss_App.interface.data.caps import Caps
 
 
 class college_project:

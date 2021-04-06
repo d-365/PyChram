@@ -8,29 +8,33 @@ from appium import webdriver
 import os
 import re
 
+# 获取设备型号
 devicesCode = os.popen('adb devices').readlines()
 deviceID = re.findall(r'^\w*\b', devicesCode[1])
 
+# 获取设备版本
 androidPlatformVersion = os.popen('adb shell getprop ro.build.version.release').readlines()
 androidVersion = re.findall(r'^\w*\b', androidPlatformVersion[0])
 
 desired_caps = {
-    # 手机 系统信息
+    # 手机系统信息
     'platformName': 'Android',
     'platformVersion': androidVersion[0],
     'deviceName': deviceID[0],
-    ##待测APP信息
+    # 待测APP信息
     'appPackage': 'cn.artstudent.app',
     'appActivity': 'cn.artstudent.app.act.app.LaunchActivity',
-    ##启动前是否重置App,False,True
+    # 启动前是否重置App,False,True
     'noReset': True,
-    ##自动化引擎
+    # 自动化引擎
     'automationName': 'UiAutomator2',
-    'newCommandTimeout': 120
+    # appium指令最长等待时间
+    'newCommandTimeout': 120,
+    # 自动同意系统权限
+    'autoGrantPermissions': True,
+    # 'chromeOptions': {'androidProcess': 'cn.artstudent.app:tools'}
     # ##App安装包位置
     # # 'app': r"C:\Users\Administrator\Downloads\Yss.apk",
-    # # ##自动同意系统权限
-    # # 'autoGrantPermissions': 'True',
     # 'newCommandTimeout ': 0
 }
 

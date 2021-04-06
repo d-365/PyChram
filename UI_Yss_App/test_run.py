@@ -3,6 +3,7 @@
 # @Author : dujun
 # @describe : 用例加载执行界面
 # @File : test_run.py
+
 import os
 import shutil
 import time
@@ -15,7 +16,8 @@ class Test_run:
         # 执行测试用例
         try:
             # logger.adbLogCat()
-            pytest.main(['-s', r'TestCase', '--alluredir', './result/'])
+            # pytest.main(['-s','-m','runTest',r'TestCase/test_production_appraise.py', '--alluredir', './result/'])
+            pytest.main(['-s', r'TestCase'])
         except:
             pass
 
@@ -23,15 +25,15 @@ class Test_run:
     @pytest.mark.run(order=-1)
     def test_teardown(self, driver, logger):
         try:
-            ##killadb服务
+            # killAdb服务
             # logger.kill_adbServer()
 
             time.sleep(10)
             driver.quit()
 
-            ##生成xml格式测试报告
+            # 生成xml格式测试报告
             os.system('allure generate ./result/ -o ./report/ --clean')
-            ##删除allure生成的临时文件
+            # 删除allure生成的临时文件
             resultPath = os.path.join(os.path.dirname(__file__), 'result')
             if os.path.exists(resultPath):
                 shutil.rmtree(resultPath)
