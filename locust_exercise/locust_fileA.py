@@ -4,50 +4,50 @@
 # @describe : describe
 
 import os
-from locust import HttpUser, TaskSet, task
+from locust import TaskSet, task, HttpUser
 
 
-class test_score(TaskSet):
-    # def on_start(self):
-    #     print('开始执行用例啦')
+class MyTaskSet(TaskSet):
 
-    header = {
-        "platformType": "2",
-        "udid": "1519fbbacd907027e734fbf8b17b2a7a",
-        "tkn": "yx001",
-        "yks": "1"
-    }
-
-    @task(1)
     def login(self):
-        url = '/login'
+        header = {
+            "platformType": "2",
+            "udid": "1519fbbacd907027e734fbf8b17b2a7a",
+            "tkn": "yx001",
+            "yks": "1"
+        }
+        url = 'http://user.51bm.net.cn/login'
         data = {
             "loginName": "yuanxiao",
             "password": 'Test1234',
         }
 
-        response = self.client.post(url=url, headers=self.header, data=data)
-        self.ticket = response.json()['ticket']
-        try:
-            assert response.status_code == 200
-        except Exception:
-            print(response.text)
+        re = self.client.post(url=url, headers=header, data=data)
+        response = re.json()
+        ticket = response['ticket']
+        return header, ticket
 
     @task
-    def queryStu(self):
-        url = '/auth/admin/user/userList.htm'
-        queryStu_data = {
-            "ticket": self.ticket,
-            "useFlag": 1
+    def case1(self):
+        result = self.login()
+        url = '/auth/school/examschedule/examScheduleData.htm'
+        data = {
+            'kaoShiID': 13186,
+            'zhuanYeID': 1223691,
+            'ticket': result[1]
         }
-        response = self.client(url=url, headers=self.header, data=queryStu_data)
+        self.client.headers.update(result[0])
+        response = self.client.post(url=url, data=data)
         print(response.json())
 
 
-class User(HttpUser):
-    host = 'http://user.51bm.net.cn'
-    tasks = [test_score]
+class MyLocust(HttpUser):
+    tasks = [MyTaskSet]
+    host = 'http://school.51bm.net.cn'
+    min_wait = 5000
+    max_wait = 15000
 
 
 if __name__ == "__main__":
-    os.system('locust -f locust_fileA.py --headless -u 10 -r 10 -t 3s')
+    # os.system('locust -f locust_fileA.py --headless -u 1 -r 1 -t 3s')
+    os.system('locust -f locust_fileA.py')

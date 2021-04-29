@@ -33,5 +33,6 @@ class school_project:
         :return:
         """
         url = self.caps['school'] + '/auth/school/examstatistic/resetVideo.htm'
+        print(url)
         response = self.re.post(url=url, data=data)
         return response

@@ -23,7 +23,7 @@ class Base_Class:
     #         response = self.re.post(url=url, data=data)
     #         return response["ticket"]
 
-    ##进入科目列表
+    # 进入科目列表
     def querySubjectVideoInfo(self, data=None):
         datas = {
             "data": str(self.stu_data.querySubjectVideoInfo_data),
@@ -32,7 +32,7 @@ class Base_Class:
         response = self.re.querySubjectVideoInfo(data=datas)
         return response
 
-    ##进考场,checkTimeByType
+    # 进考场,checkTimeByType
     def checkTimeByType(self):
         datas = {
             "data": str(self.stu_data.checkTimeByType_data),
@@ -41,7 +41,7 @@ class Base_Class:
         response = self.re.checkTimeByType(data=datas)
         return response
 
-    ##进入录制，保存考生录制次数saveCount
+    # 进入录制，保存考生录制次数saveCount
     def saveCount(self):
         datas = {
             "data": str(self.stu_data.saveCount_data),
@@ -50,7 +50,7 @@ class Base_Class:
         response = self.re.saveCount(data=datas)
         return response
 
-    ##进入录制，保存考生考试状态（saveStudentExamStatus）
+    # 进入录制，保存考生考试状态（saveStudentExamStatus）
     def saveStudentExamStatus(self):
         datas = {
             "data": str(self.stu_data.saveStudentExamStatus_data),

@@ -66,3 +66,22 @@ class probPage(Base):
         operation = self.By_Xpath(
             '//*[@resource-id="cn.artstudent.app:id/toolsRecyclerView"]/android.widget.LinearLayout[%d]' % number)
         operation.click()
+
+    # 志愿工具:热门院校：标题
+    def probTools_title(self):
+        title = self.By_Xpath('//*[@resource-id="cn.artstudent.app:id/title"]')
+        return title.get_attribute('text')
+
+    # 志愿工具：综合分计算器:统考成绩
+    def scoreCalculate_unifiedExamInput(self):
+        editText = self.By_Xpath(
+            '//*[@resource-id="inner-2pxma"]/android.view.View[2]/android.view.View[5]/android.widget.EditText[1]')
+        return editText
+
+    # 志愿工具：综合分计算器:
+    def scoreCalculate_choseSchool(self):
+        editText = self.By_Xpath(
+            '//*[@resource-id="inner-2pxma"]/android.view.View[2]/android.view.View[6]/android.widget.EditText[1]')
+        return editText
+
+    # 志愿工具：综合分计算器:选择院校

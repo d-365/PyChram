@@ -44,14 +44,14 @@ class TeststuUpload_paper:
         }
         stuLogin = user.stuLogin(login_data)
         stuTicket = stuLogin['ticket']
-        for i in range(0, 2):
-            ##考生上传评画作品
+        for i in range(0, 1):
+            # 考生上传评画作品
             evalData = {
                 "data": str({"m": "",
                              "p": {"teacherId": yunbao2['teacherId'], "teacherUserId": yunbao2['teacherUserId'],
                                    "teacherName": "天美云豹老师", "classId": 1, "className": "美术类", "profId": 1,
                                    "profName": "素描",
-                                   "paintUrl": "http://img.artstudent.cn/pr/2021-03-04/cfda71b9fc074d00944d2599416052e9.jpg",
+                                   "paintUrl": "http://img.artstudent.cn/pr/2021-04-19/b07286d72a3b495a8c2d76b371efccb3.jpg",
                                    "stuGrade": "其他",
                                    "describe": "专业评测,考生账号%s" % login_data['loginName']
                                    }}),

@@ -10,9 +10,9 @@ import numpy as np
 # 均值哈希算法
 def aHash(img):
     # 缩放为8*8
-    img = cv2.resize(img, (8, 8), interpolation=cv2.INTER_CUBIC)
+    Im = cv2.resize(img, (8, 8), interpolation=cv2.INTER_CUBIC)
     # 转换为灰度图
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(Im, cv2.COLOR_BGR2GRAY)
     # s为像素和初值为0，hash_str为hash值初值为''
     s = 0
     hash_str = ''
@@ -117,8 +117,11 @@ def calculate(image1, image2):
 
 
 if __name__ == "__main__":
-    img1 = cv2.imread('photo\A1.jpg')
-    img2 = cv2.imread('photo\A2.jpg')
+    path1 = r'D:\pythonProject\UI_Yss_App\photo\zixunInfo.png'
+    path2 = r'D:\pythonProject\UI_Yss_App\photo\zixunInfoRaw.png'
+    img1 = cv2.imread(path1)
+    img2 = cv2.imread(path2)
+
     hash1 = aHash(img1)
     hash2 = aHash(img2)
     n = cmpHash(hash1, hash2)
@@ -131,7 +134,6 @@ if __name__ == "__main__":
 
     hash1 = pHash(img1)
     hash2 = pHash(img2)
-
     n = cmpHash(hash1, hash2)
     print('感知哈希算法相似度：', n)
 

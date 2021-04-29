@@ -23,5 +23,5 @@ class examVideo_project:
         riChengID
         """
         url = self.caps['examVideo'] + '/auth/school/assignDetail/loadExaminerAssignDetailData.htm'
-        response = self.re.post(url=url, data=data)
-        return response
+        res = self.re.post(url=url, data=data)
+        return res

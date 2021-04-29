@@ -44,3 +44,17 @@ class mainPage(Base):
     def probButton(self):
         prob = self.By_Xpath('//*[@text="录取概率"]')
         prob.click()
+
+    # App启动页跳过按钮
+    def AppInit_PassBtn(self):
+        passBtn = self.By_ID('cn.artstudent.app:id/time')
+        passBtn.click()
+
+    # App首页广告推送(img)
+    def imgPush(self):
+        mainImg_push = self.By_ID('cn.artstudent.app:id/img')
+        return mainImg_push
+
+    # 录取概率广告关闭按钮
+    def probAlterCancel(self):
+        self.tap_relative(883, 792)

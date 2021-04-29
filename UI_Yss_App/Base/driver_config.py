@@ -1,8 +1,9 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 # @Time : 2020/12/21 19:25
 # @Author : dujun
 # @describe : ⼿机驱动对象初始化
 # @File : driver_config.py
+import subprocess
 
 from appium import webdriver
 import os
@@ -55,3 +56,27 @@ class DriverClient(Singleton):
 
     def get_driver(self):
         return self.driver
+
+
+def appium_start(host='127.0.0.1', port=4723):
+    bootstrap_port = str(port + 1)
+    cmd = 'start  appium -a ' + host + ' -p ' + str(port) + ' -bp ' + str(bootstrap_port)
+    print(cmd)
+    subprocess.Popen(cmd, shell=True, stderr=subprocess.STDOUT)
+
+
+def appium_end(host=4723):
+    try:
+        cmd = 'netstat -ano | findstr %d' % host
+        result = os.popen(cmd).readlines()
+        resultList = result[0]
+        portList = re.findall(r'\d+', resultList)
+        port = portList[-1]
+        killCmd = "taskkill -f -pid  %s" % port
+        subprocess.Popen(killCmd, shell=True)
+    except IndexError:
+        print('appium PID 未查询到,请检查传入的端口号')
+
+
+if __name__ == '__main__':
+    appium_end()

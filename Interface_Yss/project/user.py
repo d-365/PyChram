@@ -13,19 +13,19 @@ class userProject:
         self.re = Base_requests()
         self.caps = Caps(env=environment)
 
-    ##登录接口App登录
+    # 登录接口App登录
     def stuLogin(self, data=''):
         url = self.caps['user'] + "/login"
         response = self.re.post(url=url, data=data)
         return response
 
-    ##提交考生个人信息
+    # 提交考生个人信息
     def save_stuinfo(self, data=''):
         url = self.caps['user'] + '/api/m/auth/user/save_stuinfo.htm'
         response = self.re.post(url=url, data=data)
         return response
 
-    ##上传报考资料
+    # 上传报考资料
     def uploadStuPhoto(self, data=''):
         url = self.caps['23000'] + "/api/m/auth/service/v191119/upload_auth_res.ws"
         headers = {
@@ -37,7 +37,7 @@ class userProject:
         response = self.re.post(url=url, headers=headers, data=data)
         return response
 
-    ##提交报考资料
+    # 提交报考资料
     def submitStuInfo(self, data=''):
         url = self.caps['23000'] + "/api/m/auth/service/v191119/commit_auth_res.ws"
         response = self.re.post(url=url, data=data)

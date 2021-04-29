@@ -24,6 +24,11 @@ class TeststuUpload_production:
         :param stuAppraiseWebView:
         :param mainView:
         """
+        try:
+            time.sleep(4)
+            mainView.probAlterCancel()
+        except:
+            pass
         mainView.production_appraiseButton()
         # 专业评测页面
         AppraiseContexts = mainView.driver.contexts

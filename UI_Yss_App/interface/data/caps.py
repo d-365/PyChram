@@ -47,7 +47,7 @@ def Caps(env=''):
             'college': 'https://college.artstudent.cn',
             "analysis": 'http://192.168.18.202:7000',
             "index": 'http://192.168.18.202:10000',
-            "user": 'http://192.168.18.202:10100',
+            "user": 'http://user.artstudent.cn/login',  # http://192.168.18.202:10100
             "base": 'http://192.168.18.202:10200',
             "aftexam": 'http://192.168.18.202:10400',
             "pay": 'http://192.168.18.202:10500',

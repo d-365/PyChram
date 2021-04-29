@@ -1,0 +1,11 @@
+platformName: Android
+platformVersion: 10
+deviceName: CLB0218728003757
+appPackage: cn.artstudent.app
+appActivity: cn.artstudent.app.act.app.LaunchActivity
+noReset: True
+unicodeKeyboard: True
+resetKeyboard: True
+automationName: UiAutomator2
+autoGrantPermissions: True
+ip: 127.0.0.1

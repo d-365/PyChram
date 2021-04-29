@@ -5,7 +5,7 @@
 # @File : caps.py
 
 def Caps(env=''):
-    ##测试环境
+    # 测试环境
     if env == '':
         caps = {
             "name": 'test',
@@ -44,14 +44,14 @@ def Caps(env=''):
     ##线上环境
     elif env == 'online':
         caps = {
-            'college': 'https://college.artstudent.cn',
-            "analysis": 'http://192.168.18.202:7000',
-            "index": 'http://192.168.18.202:10000',
-            "user": 'http://192.168.18.202:10100',
-            "base": 'http://192.168.18.202:10200',
-            "aftexam": 'http://192.168.18.202:10400',
-            "pay": 'http://192.168.18.202:10500',
-            "news": 'http://192.168.18.202:10600',
+            'college': 'http://college.artstudent.cn',
+            "analysis": 'http://analysis.artstudent.cn',
+            "index": 'http://index.artstudent.cn',
+            "user": 'http://user.artstudent.cn',  # http://192.168.18.202:10100
+            "base": 'http://base.artstudent.cn',
+            "aftexam": 'http://aftexam.artstudent.cn',
+            "pay": 'http://pay.artstudent.cn',
+            "news": 'http://news.artstudent.cn',
             "filecenter": 'http://192.168.18.202:10700',
             "notice": 'http://192.168.18.202:10800',
             "monitor": 'http://192.168.18.202:10900',
@@ -61,7 +61,7 @@ def Caps(env=''):
             "advert": 'http://192.168.18.202:15000',
             "xyk": 'http://192.168.18.202:16000',
             "wish": 'http://192.168.18.202:17000',
-            "prob": 'http://192.168.18.202:18000',
+            "prob": 'http://prob.artstudent.cn',  # http://192.168.18.202:18000
             "member": 'http://192.168.18.202:20200',
             "public": 'http://192.168.18.202:20300',
             "info": 'http://192.168.18.202:20400',

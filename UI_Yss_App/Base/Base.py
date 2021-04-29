@@ -6,6 +6,8 @@
 import os
 import time
 
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from UI_Yss_App.Common.pressKeyCode import pressKeyCode
@@ -139,3 +141,19 @@ class Base(object):
         press_key = pressKeyCode()
         for i in range(0, num):
             self.driver.press_keycode(press_key['KEYCODE_DEL'])
+
+    # 判断元素是否存在
+    def isElement(self, identifyBy, element):
+        flag = None
+        try:
+            if identifyBy == "Id":
+                self.driver.implicitly_wait(10)
+                self.driver.find_element_by_id(element)
+            elif identifyBy == "Xpath":
+                self.driver.implicitly_wait(10)
+                self.driver.find_element_by_xpath(element)
+            flag = True
+        except NoSuchElementException:
+            flag = False
+        finally:
+            return flag

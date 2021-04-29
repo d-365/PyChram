@@ -12,7 +12,7 @@ from Interface_Yss.data.province import shenFen
 
 class Test_CreateStu:
 
-    ##管理员创建考生
+    # 管理员创建考生
     def test_Create_Stu(self, platSetUp, stuData):
 
         for i in range(0, len(stuData)):
@@ -25,7 +25,7 @@ class Test_CreateStu:
             }
             response = platSetUp[0].createStu(data=datas)
 
-    ##完善上传考生信息
+    # 完善上传考生信息
     def test_stuComplete(self, userRequest, stuData):
         for i in range(0, len(stuData)):
             ##考生登录
@@ -58,7 +58,7 @@ class Test_CreateStu:
             response = userRequest.save_stuinfo(data=payload)
             print(stuData[i], '完善资料', response)
 
-    ##上传报考资料
+    # 上传报考资料
     def test_uploadStuPhoto(self, userRequest, stuData):
         for i in range(0, len(stuData)):
             ##考生登录
@@ -110,30 +110,30 @@ class Test_CreateStu:
             response_last = userRequest.submitStuInfo(data=payload_last)
             print(stuData[i], '提交报考资料', response_last)
 
-    ##登录客服账号，进行审核操作
-    def test_check(self, stuData, platSetUp, auditRequest):
-        datas = Account.kefu_account
-        response = platSetUp[0].plat_login(data=datas)
-        kefu_ticket = response['ticket']
-        for i in range(0, len(stuData)):
-            datas = stuData[i]
-            payload = {
-                "idcardNo": datas,
-                "ticket": kefu_ticket
-            }
-            ##获取考生psId
-            responsePsid = auditRequest.query_psId(data=payload)
-            psId = responsePsid['datas']['page']['dataList'][0]['psId']
-
-            ##审核
-            checkPayload = {
-                "psId": psId,
-                "auditFlag": 1,
-                "applyTicket": 1,
-                "ticket": kefu_ticket
-            }
-            responseCheck = auditRequest.check_stuInfo(data=checkPayload)
-            print(stuData[i], '审核成功', responseCheck)
+    # ##登录客服账号，进行审核操作
+    # def test_check(self, stuData, platSetUp, auditRequest):
+    #     datas = Account.kefu_account
+    #     response = platSetUp[0].plat_login(data=datas)
+    #     kefu_ticket = response['ticket']
+    #     for i in range(0, len(stuData)):
+    #         datas = stuData[i]
+    #         payload = {
+    #             "idcardNo": datas,
+    #             "ticket": kefu_ticket
+    #         }
+    #         ##获取考生psId
+    #         responsePsid = auditRequest.query_psId(data=payload)
+    #         psId = responsePsid['datas']['page']['dataList'][0]['psId']
+    #
+    #         ##审核
+    #         checkPayload = {
+    #             "psId": psId,
+    #             "auditFlag": 1,
+    #             "applyTicket": 1,
+    #             "ticket": kefu_ticket
+    #         }
+    #         responseCheck = auditRequest.check_stuInfo(data=checkPayload)
+    #         print(stuData[i], '审核成功', responseCheck)
 
 
 if __name__ == "__main__":

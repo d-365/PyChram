@@ -26,7 +26,7 @@ class eval_project:
         response = self.re.post(url=url, data=data)
         return response
 
-    ##提交评画订单
+    # 提交评画订单
     def commit_evaluation_order(self, data):
         url = self.caps['eval'] + '/api/m/auth/paint/v200929/commit_evaluation_order.htm'
         response = self.re.post(url=url, data=data)

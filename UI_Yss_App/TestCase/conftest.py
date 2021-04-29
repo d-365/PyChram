@@ -5,13 +5,13 @@
 # @File :conftest.py
 import pytest
 from UI_Yss_App.Page.My_Button import myPage
+from UI_Yss_App.Page.enrollProbabilityPage import probPage
 from UI_Yss_App.Page.examHomePage import examMainPage, examSubject_info
 from UI_Yss_App.Page.mainPage import mainPage
 from UI_Yss_App.Base.driver_config import desired_caps
 from UI_Yss_App.Page.StuProduction_appraisePage import stuProduction_appraise_webView, stuProduction_appraise_native
 from faker import Faker
 from UI_Yss_App.Page.AndroidCommonPage import androidCommon
-
 
 @pytest.fixture(scope='session')
 def faker():
@@ -20,7 +20,7 @@ def faker():
 
 
 @pytest.fixture(scope='session')
-def test_my(driver):
+def myView(driver):
     MyPage = myPage(driver)
     if not desired_caps['noReset']:
         MyPage.resetApp()
@@ -67,3 +67,10 @@ def stuAppraiseNative(driver):
 def androidCommonView(driver):
     android = androidCommon(driver)
     return android
+
+
+# probPage
+@pytest.fixture(scope='session')
+def probView(driver):
+    prob = probPage(driver)
+    return prob

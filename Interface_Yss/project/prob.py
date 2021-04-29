@@ -12,13 +12,13 @@ class prob_project:
         self.re = Base_requests()
         self.caps = Caps(env=environment)
 
-    ##省份分数线查询
+    # 省份分数线查询
     def loadProvinceScoreLineData(self, data=''):
         url = self.caps['prob'] + '/auth/prob/provinceScoreLine/loadProvinceScoreLineData.htm'
         response = self.re.post(url=url, data=data)
         return response
 
-    ##统考计算公式
+    # 统考计算公式
     def loadJointScoreExpressionData(self, data=''):
         url = self.caps['prob'] + '/auth/prob/jointScoreExpression/loadJointScoreExpressionData.htm'
         response = self.re.post(url=url, data=data)

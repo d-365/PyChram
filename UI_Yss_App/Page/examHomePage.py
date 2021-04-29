@@ -15,53 +15,53 @@ class examMainPage(Base):
         netWorkExam_button = self.By_Xpath('//*[@text="远程提交考试作品"]')
         netWorkExam_button.click()
 
-    ##点击进入正式考试（默认进入第一个）
+    # 点击进入正式考试（默认进入第一个）
     def tempOfficialExam_button(self):
         tempOfficialExam_button = self.By_Xpath('//*[@text="正式考试"]')
         tempOfficialExam_button.click()
 
-    ##科目列表中,开始考试按钮（number下标为1）
+    # 科目列表中,开始考试按钮（number下标为1）
     def subject(self, number):
         subjectButton = self.By_Xpath(
             '//*[@resource-id="app"]/android.view.View[1]/android.view.View[5]/android.view.View[%d]/android.view.View[6]' % number)
         subjectButton.click()
 
-    ##科目详情页_录制视频按钮
+    # 科目详情页_录制视频按钮
     def recordButton(self):
         record_button = self.By_Xpath("//android.widget.Button[contains(@text,'录制')]")
         record_button.click()
 
-    ##确认录制弹窗_确认按钮
+    # 确认录制弹窗_确认按钮
     def recordAlter_affirm(self):
         record_affirm = self.By_Xpath("//android.widget.Button[contains(@text,'确定') ]")
         record_affirm.click()
 
-    ##录制确认弹窗_取消按钮
+    # 录制确认弹窗_取消按钮
     def recordAlter_cancel(self):
         record_cancel = self.By_Xpath("//android.widget.Button[contains(@text,'取消') ]")
         record_cancel.click()
 
-    ##录制界面_开始录制按钮
+    # 录制界面_开始录制按钮
     def record_start(self):
         recordStart = self.By_ID('cn.artstudent.app:id/startRecordBtn')
         recordStart.click()
 
-    ##录制过程中，隐藏考题按钮
+    # 录制过程中，隐藏考题按钮
     def recording_hiddenQuestions(self):
         recordingHiddenQuestion = self.By_Xpath('//*[@resource-id="cn.artstudent.app:id/showOrHideBtn"]')
         recordingHiddenQuestion.click()
 
-    ##录制过程中,获取文字考题
+    # 录制过程中,获取文字考题
     def recoding_textQuestion(self):
         testQuestion = self.By_ID('cn.artstudent.app:id/examTextView').get_attribute('text')
         return testQuestion
 
-    ##录制过程中，获取录制界面图片考题number下标为1
+    # 录制过程中，获取录制界面图片考题number下标为1
     def recoding_photoQuestion(self, number):
         photoQuestion = self.By_ID('cn.artstudent.app:id/examQuestion%dImg' % number)
         return photoQuestion
 
-    ##录制界面_交卷按钮
+    # 录制界面_交卷按钮
     def record_end(self):
         recordEnd = self.By_Xpath('//*[@resource-id="cn.artstudent.app:id/doneBtn"]')
         recordEnd.click()
@@ -115,6 +115,11 @@ class examMainPage(Base):
 # 科目详情页
 class examSubject_info(Base):
 
+    # 手机电量不足弹窗_confirm
+    def electric_quantity_AlterConfirm(self):
+        electric_quantity = self.By_Xpath('//*[@text="继续考试"]')
+        electric_quantity.click()
+
     # 科目详情页_手机音量未开启_确定按钮
     def volume_confirmButton(self):
         volumeButton = self.By_Xpath('//*[@text="确定"]')
@@ -154,23 +159,16 @@ class examSubject_info(Base):
     # 科目详情页-删除单张已拍照片( 下标从1开始递增1)
     def delete_picture(self, number):
         deletePicture = self.By_Xpath(
-            '//*[@resource-id="app"]/android.view.View[1]/android.view.View[1]/android.view.View[3]/android.view.View[2]/android.widget.Image[%d]' % number)
+            '//*[@resource-id="app"]/android.view.View[1]/android.view.View[1]/android.view.View[4]/android.view.View[1]/android.widget.Image[%d]' % number)
         deletePicture.click()
 
-    ##已经保存的照片，下标从1开始递增1
+    # 已经保存的照片，下标从1开始递增1
     def savedPicture(self, number):
         Picture = self.By_Xpath(
             '//*[@resource-id="app"]/android.view.View[1]/android.view.View[1]/android.view.View[2]/android.view.View[%d]' % number)
         return Picture
 
-    ##科目详情页-删除全部已拍照片
-    def delete_allPicture(self, number):
-        for i in range(1, number + 1):
-            deletePicture = self.By_Xpath(
-                '//*[@resource-id="app"]/android.view.View[1]/android.view.View[1]/android.view.View[3]/android.view.View[2]/android.widget.Image[%d]' % i)
-            deletePicture.click()
-
-    ##科目详情-选中已录视频(下标从 2开始,每次递增2：偶数)、（播放视频下标为3,每次递增2：奇数）
+    # 科目详情-选中已录视频(下标从 2开始,每次递增2：偶数)、（播放视频下标为3,每次递增2：奇数）
     def checked_video(self, number):
         checkedVideo = self.By_Xpath(
             '//*[@resource-id="app"]/android.view.View[1]/android.view.View[1]/android.view.View[2]/android.view.View[%d]' % number)

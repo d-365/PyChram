@@ -35,27 +35,27 @@ class log(object):
             pass
         else:
             os.mkdir(logs_dir)
-        ##修改log日志文件保存位置
+        # 修改log日志文件保存位置
         timestamp = time.strftime("console%Y-%m-%d", time.localtime())
         logFileName = '%s.txt' % timestamp
-        ##文件保存位置
+        # 文件保存位置
         logFilePath = os.path.join(logs_dir, logFileName)
 
-        ##文件句柄rotatingFileHandler
+        # 文件句柄rotatingFileHandler
         rotatingFileHandler = logging.handlers.RotatingFileHandler(logFilePath, maxBytes=1024 * 200, backupCount=3)
         ##rotatingFileHandler.setLevel(logging.DEBUG)
 
-        ##控制台句柄StreamHandler
+        # 控制台句柄StreamHandler
         consoleHandle = logging.StreamHandler()
-        ##consoleHandle.setLevel(logging.DEBUG)
+        # consoleHandle.setLevel(logging.DEBUG)
 
-        ##设置日志格式
+        # 设置日志格式
         formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s")
-        ##formatter = logging.Formatter('%(asctime)s-%(name)s-%(filename)s-[line:%(lineno)d]-%(levelname)s-[日志信息]: %(message)s',datefmt='%a, %d %b %Y %H:%M:%S')
+        # formatter = logging.Formatter('%(asctime)s-%(name)s-%(filename)s-[line:%(lineno)d]-%(levelname)s-[日志信息]: %(message)s',datefmt='%a, %d %b %Y %H:%M:%S')
         rotatingFileHandler.setFormatter(formatter)
         consoleHandle.setFormatter(formatter)
 
-        ##添加内容到句柄中
+        # 添加内容到句柄中
         self.logger.addHandler(rotatingFileHandler)
         self.logger.addHandler(consoleHandle)
         self.logger.setLevel(levels[level])
@@ -87,19 +87,19 @@ class log(object):
             pass
         else:
             os.mkdir(AppLogs_dir)
-        ##获取当前时间
+        # 获取当前时间
         timestamp = time.strftime("%Y-%m-%d", time.localtime())
-        ##设置文件名
+        # 设置文件名
         fileName = '%s.txt' % timestamp
-        ##加载文件路径
+        # 加载文件路径
         appLogPath = os.path.join(AppLogs_dir, fileName)
-        ##执行adb logcat 命令
+        # 执行adb logcat 命令
         command = "adb logcat -v time > %s" % appLogPath
-        ##执行command
+        # 执行command
         subprocess.Popen("adb logcat -c")
         subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
 
-    ##关闭adb服务
+    # 关闭adb服务
     def kill_adbServer(self):
         subprocess.Popen('adb kill-server')
 

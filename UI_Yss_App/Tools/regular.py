@@ -9,7 +9,7 @@ import os
 
 class regular:
 
-    # 提取文本中数字
+    # 提取AdbCommand文本
     def reInt(self, command):
         reValue = os.popen(command).readlines()
         return reValue

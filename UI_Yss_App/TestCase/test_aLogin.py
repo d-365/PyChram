@@ -26,105 +26,105 @@ class Test_Login:
 
     # 输入用户名和密码,未勾选注册协议
     @pytest.mark.repeat(1, scope='function')
-    def test_case1(self, test_my):
+    def test_case1(self, myView):
         errorMessage = '请阅读及确认用户协议和隐私政策'
         try:
-            test_my.usernameText.click()
-            test_my.press_keyCode('h', 'a', 'i', 't', 'u', 'n')
-            test_my.passwordText.click()
-            test_my.press_keyCode('T', 'e', 's', 't', '1', '2', '3', '4')
+            myView.usernameText.click()
+            myView.press_keyCode('h', 'a', 'i', 't', 'u', 'n')
+            myView.passwordText.click()
+            myView.press_keyCode('T', 'e', 's', 't', '1', '2', '3', '4')
             ##提交登录
-            test_my.loginButton.click()
+            myView.loginButton.click()
             message = '//*[@text=\'{}\']'.format(errorMessage)
-            toast = test_my.By_Xpath(message)
-            test_my.usernameText.clear()
-            test_my.passwordText.clear()
+            toast = myView.By_Xpath(message)
+            myView.usernameText.clear()
+            myView.passwordText.clear()
             assert toast.text == 1
         except:
             self.logger.info('login_case1,注册协议用例执行失败')
 
     # 用户名输入不正确(toast)
-    def test_case2(self, test_my):
+    def test_case2(self, myView):
         errorMessage = '用户名输入不正确'
         try:
             ##用户名输入框
-            test_my.usernameText.click()
-            test_my.press_keyCode('h')
+            myView.usernameText.click()
+            myView.press_keyCode('h')
             ##密码输入框
-            test_my.passwordText.click()
-            test_my.press_keyCode('h')
+            myView.passwordText.click()
+            myView.press_keyCode('h')
             try:
                 # 勾选用户注册协议
-                test_my.CheckBox.click()
+                myView.CheckBox.click()
             except:
                 pass
             ##提交登录
-            test_my.loginButton.click()
+            myView.loginButton.click()
             ##捕捉toast提示
             message = '//*[@text=\'{}\']'.format(errorMessage)
-            toast = test_my.By_Xpath(message)
+            toast = myView.By_Xpath(message)
             assert toast.text == errorMessage
             self.logger.info("test_case2执行成功")
         except AssertionError:
             self.logger.error('case2执行失败')
 
     # 密码输入长度不正确(toast)
-    def test_case3(self, test_my):
+    def test_case3(self, myView):
         errorMessage = '密码输入长度不正确'
         try:
             ##用户名输入框
-            test_my.usernameText.click()
-            test_my.press_keyCode('a', 'i', 't', 'u', 'n', '3')
+            myView.usernameText.click()
+            myView.press_keyCode('a', 'i', 't', 'u', 'n', '3')
             ##密码输入框
-            test_my.passwordText.click()
-            test_my.press_keyCode('a', 'i')
+            myView.passwordText.click()
+            myView.press_keyCode('a', 'i')
             ##提交登录
-            test_my.loginButton.click()
+            myView.loginButton.click()
             ##捕捉toast提示
             message = '//*[@text=\'{}\']'.format(errorMessage)
-            toast = test_my.By_Xpath(message)
+            toast = myView.By_Xpath(message)
             assert toast.text == errorMessage
             self.logger.info("test_case3执行完毕")
         except AssertionError:
             self.logger.error('case3执行失败')
 
     # 登录名或密码不正确(弹窗)
-    def test_case4(self, test_my):
+    def test_case4(self, myView):
         try:
             errorMessage = '登录名或密码不正确'
             ##密码输入框
-            test_my.passwordText.click()
-            test_my.press_keyCode('t', 'u', 'n')
+            myView.passwordText.click()
+            myView.press_keyCode('t', 'u', 'n')
             ##提交登录
-            test_my.loginButton.click()
+            myView.loginButton.click()
             ##处理alter
-            alter_message = test_my.By_ID('cn.artstudent.app:id/message')
-            alter_button = test_my.By_ID('cn.artstudent.app:id/positiveButton')
+            alter_message = myView.By_ID('cn.artstudent.app:id/message')
+            alter_button = myView.By_ID('cn.artstudent.app:id/positiveButton')
             alter_button.click()
             # assert alter_message.text ==errorMessage
-            test_my.usernameText.clear()
+            myView.usernameText.clear()
             self.logger.info('test_case4,执行成功')
         except Exception:
             self.logger.error('case4执行失败')
 
     ##正确的用户名密码,完成登录
     # @pytest.mark.skip()
-    def test_case5(self, test_my):
+    def test_case5(self, myView):
         try:
-            test_my.driver.implicitly_wait(3)
+            myView.driver.implicitly_wait(3)
             # # 用户名输入框
-            test_my.usernameText.click()
-            test_my.usernameText.clear()
-            test_my.press_keyCode('h', 'a', 'i', 't', 'u', 'n', '3')
+            myView.usernameText.click()
+            myView.usernameText.clear()
+            myView.press_keyCode('h', 'a', 'i', 't', 'u', 'n', '3')
             ##密码输入框
-            test_my.passwordText.click()
-            test_my.passwordText.clear()
-            test_my.driver.press_keycode(self.pressKey['t'], '64')
-            test_my.press_keyCode('e', 's', 't', '1', '2', '3', '4')
+            myView.passwordText.click()
+            myView.passwordText.clear()
+            myView.driver.press_keycode(self.pressKey['t'], '64')
+            myView.press_keyCode('e', 's', 't', '1', '2', '3', '4')
             ##提交登录
-            test_my.loginButton.click()
+            myView.loginButton.click()
             ##alter处理
-            alter_button = test_my.By_ID('cn.artstudent.app:id/closeDialog')
+            alter_button = myView.By_ID('cn.artstudent.app:id/closeDialog')
             alter_button.click()
             self.logger.info('test_case5,执行成功,用户登录成功')
         except Exception:

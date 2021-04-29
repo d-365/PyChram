@@ -4,8 +4,6 @@
 # @describe : test_exam对应接口脚本 ：视频录制类视频打回
 # @File : exam_VideoBack.py
 
-import pytest
-
 from UI_Yss_App.interface.project.college import college_project
 from UI_Yss_App.interface.project.examVideo import examVideo_project
 from UI_Yss_App.interface.project.school import school_project
@@ -48,6 +46,7 @@ class videoBack:
             'ticket': self.ticket
         }
         response = self.examVideo.loadExaminerAssignDetailData(data=query_data)
+        print(response)
         svId = response['datas']['page']['dataList'][0]['svId']
 
         pwd_data = {
@@ -71,5 +70,4 @@ class videoBack:
 
 
 if __name__ == "__main__":
-    run = videoBack()
-    run.videoBack1(13703)
+    videoBack().videoBack1(esId=13704)

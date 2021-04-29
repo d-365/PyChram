@@ -9,14 +9,14 @@ from Interface_Yss.Common.Base_Request import Base_requests
 
 
 class platRaw:
-    cap = Caps()
-    re = Base_requests()
-    ticket = ''
-    plat_data = VideoSchema_Data.platData()
+    def __init__(self, environment):
+        self.re = Base_requests()
+        self.caps = Caps(env=environment)
+        self.plat_data = VideoSchema_Data.platData()
 
-    ##平台登录
+    # 平台登录
     def plat_login(self, data=None):
-        url = self.cap['college'] + '/login'
+        url = self.caps['college'] + '/login'
         if data is None:
             response = self.re.post(url=url, data=Account.yuanXiao)
             self.ticket = response['ticket']
@@ -25,9 +25,9 @@ class platRaw:
             self.ticket = response['ticket']
         return response
 
-    ##院校后台查询对应考试视频
+    # 院校后台查询对应考试视频
     def schoolQueryVideo(self):
-        url = self.cap['examVideo'] + '/auth/school/assignDetail/loadExaminerAssignDetailData.htm'
+        url = self.caps['examVideo'] + '/auth/school/assignDetail/loadExaminerAssignDetailData.htm'
         datas = {
             "data": self.plat_data.schoolQueryVideo,
             "ticket": self.ticket
@@ -35,14 +35,8 @@ class platRaw:
         response = self.re.post(url=url, data=datas)
         return response
 
-    ##创建考生
+    # 创建考生
     def createStu(self, data=''):
-        url = self.cap['user'] + '/auth/admin/user/saveUser.htm'
+        url = self.caps['user'] + '/auth/admin/user/saveUser.htm'
         response = self.re.post(url=url, data=data)
         return response
-
-
-if __name__ == "__main__":
-    run = platRaw()
-    run.plat_login()
-    run.createStu()

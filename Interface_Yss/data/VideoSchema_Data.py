@@ -5,20 +5,20 @@
 # @File : VideoSchema_Data.py
 
 class stuData:
-    ##日程ID
+    # 日程ID
     riChengId = ''
-    ##报考ID
+    # 报考ID
     baoKaoId = ''
-    ##学校ID
+    # 学校ID
     xueXiaoId = ''
 
-    ##考生账号
+    # 考生账号
     stu_Login_data = {
         "loginName": 'HAITUN100',
         'password': 'Csk001'
     }
 
-    ##进入科目列表querySubjectVideoInfo
+    # 进入科目列表querySubjectVideoInfo
     querySubjectVideoInfo_data = {
         "m": "",
         "p": {
